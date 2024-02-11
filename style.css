@@ -2,57 +2,89 @@ body {
     background-color: burlywood;
 }
 
-/* Styling for the navigation bar */
+/* Base styles */
 nav {
-    background-color: #333;
-    padding: 15px 0;
-    text-align: center;
+    background: linear-gradient(45deg, #ff7300, #ff3860, #b81cfa, #fcb045, #2e2e2e);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-/* Styling for the navigation links */
 nav ul {
-    list-style-type: none;
-    margin: 0;
+    list-style: none;
     padding: 0;
-    display: inline-block;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline-block;
     position: relative;
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
     display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease;
 }
 
-/* Styling for the dropdown menus */
-nav ul li ul {
+nav ul li a:hover {
+    transform: translateY(-3px) translateZ(0) scale(1.05);
+}
+
+/* Dropdown menu styles */
+nav ul ul {
     display: none;
     position: absolute;
-    background-color: #333;
-    width: 200px;
-    text-align: left;
-    z-index: 1;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-nav ul li:hover ul {
+nav ul ul li {
     display: block;
 }
 
-nav ul li ul li {
+nav ul li:hover>ul {
     display: block;
 }
 
-/* Styling for the logo */
-.logo {
-    position: relative;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    nav ul ul {
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+
+/* Background gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container {
@@ -66,16 +98,57 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #333;
-    color: #fff;
+    background-color: #000;
+    color: #ffffff;
     text-align: center;
     padding: 20px 0;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Media queries for responsiveness */
-@media only screen and (max-width: 600px) {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+p {
+    margin: 5px;
+}
+
+/* Background effect */
+@keyframes colorchange {
+    0% {
+        background-color: rgb(0, 0, 0);
+    }
+
+    25% {
+        background-color: rgb(51, 51, 190);
+    }
+
+    50% {
+        background-color: green;
+    }
+
+    75% {
+        background-color: rgb(68, 68, 2);
+    }
+
+    100% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: #3498db;
+    }
+}
+
+footer {
+    animation: colorchange 15s infinite;
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
     .container {
-        padding: 0 10px;
+        padding: 0 20px;
     }
 }
 
@@ -115,4 +188,71 @@ footer {
 
 .custom-button:hover {
     transform: translateY(3px) translateZ(0) scale(1.05);
+}
+
+/* Base styles */
+form {
+    background: linear-gradient(to right, #3498db, #2ecc71, #f1c40f, #e74c3c);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: inline-block;
+    width: 200px;
+    color: #000000;
+    font-weight: bold;
+}
+
+form input[type="text"] {
+    width: calc(100% - 200px);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+form input[type="text"]:focus {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#weight-guide {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    form label {
+        width: 100%;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    form input[type="text"] {
+        width: 100%;
+    }
+}
+
+/* Background gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
