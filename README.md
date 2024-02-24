@@ -1,9 +1,7 @@
 # BMI-Calculator-web-App
 This repository contains a simple BMI (Body Mass Index) calculator web application built with HTML, CSS, and JavaScript.
 # live Link to checkout page
-```
  https://mdmohsinhaider.github.io/BMI-Calculator-web-App/
-```
 Sure, here's a GitHub repository description for a BMI Calculator:
 
 ---
